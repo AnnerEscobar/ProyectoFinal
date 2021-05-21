@@ -20,12 +20,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Xsl;
 using System.IO;
+using FinalProgra.Archivo;
 
 namespace FinalProgra
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -62,7 +60,6 @@ namespace FinalProgra
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Database=final; Port = 3306; Username = root;  password = SoyAgente2341;");
             conectar.Open();
             string query = $"Delete From final.registros where Correlativo = {Eliminar.Text}";
             Consultas.Consultas(conectar, query, dataGrid1);
@@ -106,29 +103,15 @@ namespace FinalProgra
 
         private void btnDescargar_Click(object sender, RoutedEventArgs e)
         {
+            Descarga archivos = new Descarga();
+            string ruta = TtxRuta.Text;
+            string query = "select *from final.registros ";
             SaveFileDialog guardar = new SaveFileDialog() { Filter = "Archivo CSV|*.csv" };
-            if (guardar.ShowDialog() == true) TtxRuta.Text = guardar.FileName;
+            if (guardar.ShowDialog() == true) ruta = guardar.FileName;
+        
 
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Database=final; Port = 3306; Username = root;  password = SoyAgente2341;");
             conectar.Open();
-            MySqlDataAdapter adptador = new MySqlDataAdapter("select *from final.registros ",conectar);
-            DataTable tabla = new DataTable();
-            adptador.Fill(tabla);
-
-            List<string> lineas = new List<string>(), columnas = new List<string>();
-            foreach (DataColumn col in tabla.Columns) columnas.Add(col.ColumnName);
-            lineas.Add(string.Join(";", columnas));
-            
-            foreach(DataRow fila in tabla.Rows)
-            {
-                List<string> celdas = new List<string>();
-                foreach (object celda in fila.ItemArray) celdas.Add(celda.ToString());
-                    lineas.Add(string.Join(";", celdas));
-                
-            }
-            File.WriteAllLines(TtxRuta.Text, lineas);
-            MessageBox.Show($"Archivo guardado correctamente en: {TtxRuta} ");
-
+            archivos.Rellenar(query, conectar, ruta);
             conectar.Close();
 
 
