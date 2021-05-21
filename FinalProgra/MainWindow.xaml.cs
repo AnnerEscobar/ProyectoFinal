@@ -33,42 +33,30 @@ namespace FinalProgra
             InitializeComponent();
         }
 
-        string rutaConexion = "Server = localhost; Database=final; Port = 3306; Username = root;  password = SoyAgente2341;";
-        
-        
+        Consulta Consultas = new Consulta();
+        MySqlConnection conectar = new MySqlConnection("Server = localhost; Database=final; Port = 3306; Username = root;  password = SoyAgente2341;");
+
 
 
         private void BotonVenta_Click(object sender, RoutedEventArgs e)
         {
-            string Correlativo = Texbox1.Text;
-            string Nombre = Texbox2.Text;
-            string Nit = Texbox3.Text;
+
             string fecha = Convert.ToDateTime(DatePicker.Text).ToString("yyyy/MM/dd");
-            string Marca = Texbox5.Text;
-            string Modelo = Texbox6.Text;
-            string Precio = Texbox7.Text;
-            string Color = Texbox8.Text;
 
             try
             {
-                MySqlConnection conn = new MySqlConnection(rutaConexion);
-                conn.Open();
-                var sql = $"INSERT INTO registros values({Correlativo},'{Nombre}',{Nit},'{fecha}','{Marca}','{Modelo}',{ Precio},'{Color}')";
-                MySqlCommand Createcommand = new MySqlCommand(sql, conn);
-                Createcommand.ExecuteNonQuery();
-
-                MySqlDataAdapter dataAdp = new MySqlDataAdapter(Createcommand);
-                DataTable dt = new DataTable("registros");
-                dataAdp.Fill(dt);
-                dataGrid1.ItemsSource = dt.DefaultView;
-                dataAdp.Update(dt);
-                conn.Close();
+                conectar.Open();
+                var sql = $"INSERT INTO registros values({Texbox1.Text},'{Texbox2.Text}',{Texbox3.Text},'{fecha}','{Texbox5.Text}','{Texbox6.Text}',{Texbox7.Text},'{Texbox8.Text}')";
+                Crud insert = new Crud();
+                insert.CagarCompra(sql, conectar);
+                conectar.Close();
             }
             catch (Exception)
             {
-                MessageBox.Show("Venta agregada con exito");
+                MessageBox.Show("Venta No agregada con exito");
             }
         
+
         }
 
 
@@ -76,19 +64,8 @@ namespace FinalProgra
         {
             MySqlConnection conectar = new MySqlConnection("Server = localhost; Database=final; Port = 3306; Username = root;  password = SoyAgente2341;");
             conectar.Open();
-           
             string query = $"Delete From final.registros where Correlativo = {Eliminar.Text}";
-            MySqlCommand Createcommand = new MySqlCommand(query, conectar);
-            Createcommand.ExecuteNonQuery();
-
-            MySqlDataAdapter dataAdp = new MySqlDataAdapter(Createcommand);
-            DataTable dt = new DataTable("registros");
-            dataAdp.Fill(dt);
-            dataGrid1.ItemsSource = dt.DefaultView;
-            dataAdp.Update(dt);
-
-
-
+            Consultas.Consultas(conectar, query, dataGrid1);
             conectar.Close();
 
         }
@@ -98,17 +75,9 @@ namespace FinalProgra
         {
             string fecha1 = Convert.ToDateTime(Fecha1.Text).ToString("yyyy/MM/dd");
             string fecha2 = Convert.ToDateTime(Fecha2.Text).ToString("yyyy/MM/dd");
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Database=final; Port = 3306; Username = root;  password = SoyAgente2341;");
             conectar.Open();
-            string query = $"Select Nombre, Nit, Precio, Marca, Color, Fecha FROM final.registros where Fecha between'{fecha1}' AND '{fecha2}'";
-            MySqlCommand Createcommand = new MySqlCommand(query,conectar);
-            Createcommand.ExecuteNonQuery();
-
-            MySqlDataAdapter dataAdp = new MySqlDataAdapter(Createcommand);
-            DataTable dt = new DataTable("registros");
-            dataAdp.Fill(dt);
-            dataGrid1.ItemsSource = dt.DefaultView;
-            dataAdp.Update(dt);
+            string query = $"Select Correlativo, Nombre, Nit, Precio, Marca, Color, Fecha FROM final.registros where Fecha between'{fecha1}' AND '{fecha2}'";
+            Consultas.Consultas(conectar, query, dataGrid1);
             conectar.Close();
 
         }
@@ -117,38 +86,23 @@ namespace FinalProgra
 
         private void btnActualizar_Click(object sender, RoutedEventArgs e)
         {
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Database=final; Port = 3306; Username = root;  password = SoyAgente2341;");
             conectar.Open();
 
             string query = $"Update final.registros SET Nombre ='{TxtActualizacion.Text}' where Correlativo = {Eliminar.Text}";
-            MySqlCommand Createcommand = new MySqlCommand(query, conectar);
-            Createcommand.ExecuteNonQuery();
-
-            MySqlDataAdapter dataAdp = new MySqlDataAdapter(Createcommand);
-            DataTable dt = new DataTable("registros");
-            dataAdp.Fill(dt);
-            dataGrid1.ItemsSource = dt.DefaultView;
-            dataAdp.Update(dt);
+            Consultas.Consultas(conectar, query, dataGrid1);
             conectar.Close();
         }
+
 
         private void btnCargarB_Click(object sender, RoutedEventArgs e)
         {
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Database=final; Port = 3306; Username = root;  password = SoyAgente2341;");
             conectar.Open();
-
             string query = "Select *from final.registros";
-            MySqlCommand Createcommand = new MySqlCommand(query, conectar);
-            Createcommand.ExecuteNonQuery();
-
-            MySqlDataAdapter dataAdp = new MySqlDataAdapter(Createcommand);
-            DataTable dt = new DataTable("registros");
-            dataAdp.Fill(dt);
-            dataGrid1.ItemsSource = dt.DefaultView;
-            dataAdp.Update(dt);
-
+            Consultas.Consultas(conectar,query,dataGrid1);
             conectar.Close();
         }
+
+
 
         private void btnDescargar_Click(object sender, RoutedEventArgs e)
         {

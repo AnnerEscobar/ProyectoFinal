@@ -12,16 +12,10 @@ namespace FinalProgra.Consultas
     class Crud
     {
 
-        public void CagarCompra(string crud)
+        public void CagarCompra(string sql,MySqlConnection conn )
         {
-            MySqlConnection conn = new MySqlConnection("Server = localhost; Database=final; Port = 3306; Username = root;  password = SoyAgente2341;");
-            conn.Open();
-            var sql = crud;
-            var cmd = new MySqlCommand();
-            cmd.CommandText = sql;
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.Connection = conn;
-            conn.Close();
+            MySqlCommand Createcommand = new MySqlCommand(sql, conn);
+            Createcommand.ExecuteNonQuery();
         }
     }
 }

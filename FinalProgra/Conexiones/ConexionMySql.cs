@@ -16,7 +16,7 @@ namespace FinalProgra.Conexiones
         public ConexionMySql()
         {
 
-            _conexion = "Server = localhost; Database=base; Port = 3306; Username = root;  password = Umg$2019;";
+            _conexion = "Server = localhost; Database=final; Port = 3306; Username = root;  password = SoyAgente2341;";
 
         }
         /// <summary>

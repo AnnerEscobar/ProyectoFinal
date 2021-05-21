@@ -21,19 +21,19 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <TextBox x:Name="Texbox1" HorizontalAlignment="Left" Height="19" Margin="21,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="Texbox5" HorizontalAlignment="Left" Height="19" Margin="21,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="Texbox7" HorizontalAlignment="Left" Height="19" Margin="21,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="Texbox8" HorizontalAlignment="Left" Height="19" Margin="21,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Texbox5" HorizontalAlignment="Left" Height="19" Margin="21,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Texbox7" HorizontalAlignment="Left" Height="19" Margin="21,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Texbox8" HorizontalAlignment="Left" Height="19" Margin="21,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
         <Label Content="Nombre Cliente:" HorizontalAlignment="Left" Margin="100,63,0,0" VerticalAlignment="Top" Width="105" Height="26" Grid.Column="1"/>
-        <TextBox x:Name="Texbox6" HorizontalAlignment="Left" Height="19" Margin="21,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
-        <Label Content="Marca:" HorizontalAlignment="Left" Margin="100,173,0,0" VerticalAlignment="Top" Width="61" Height="26" Grid.Column="1"/>
-        <Label Content="Color:" HorizontalAlignment="Left" Margin="100,287,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.484,3.423" Height="26" Grid.Column="1"/>
-        <Label Content="Precio:" HorizontalAlignment="Left" Margin="100,245,0,0" VerticalAlignment="Top" Width="61" Height="26" Grid.Column="1"/>
-        <Label Content="Modelo:" HorizontalAlignment="Left" Margin="100,212,0,0" VerticalAlignment="Top" Width="61" Height="26" Grid.Column="1"/>
-        <Button x:Name="BotonVenta" Content="Realizar Venta" HorizontalAlignment="Left" Margin="21,338,0,0" VerticalAlignment="Top" Width="144" Click="BotonVenta_Click" Height="20" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Texbox6" HorizontalAlignment="Left" Height="19" Margin="21,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
+        <Label Content="Marca:" HorizontalAlignment="Left" Margin="100,158,0,0" VerticalAlignment="Top" Width="61" Height="26" Grid.Column="1"/>
+        <Label Content="Color:" HorizontalAlignment="Left" Margin="100,242,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.484,3.423" Height="26" Grid.Column="1"/>
+        <Label Content="Precio:" HorizontalAlignment="Left" Margin="100,215,0,0" VerticalAlignment="Top" Width="61" Height="26" Grid.Column="1"/>
+        <Label Content="Modelo:" HorizontalAlignment="Left" Margin="100,184,0,0" VerticalAlignment="Top" Width="61" Height="26" Grid.Column="1"/>
+        <Button x:Name="BotonVenta" Content="Realizar Venta" HorizontalAlignment="Left" Margin="39,265,0,0" VerticalAlignment="Top" Width="126" Click="BotonVenta_Click" Height="20" Grid.ColumnSpan="2"/>
         <TextBox x:Name="Texbox2" HorizontalAlignment="Left" Height="19" Margin="21,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
-        <Label Content="Nit:" HorizontalAlignment="Left" Margin="100,94,0,0" VerticalAlignment="Top" Width="61" Height="26" Grid.Column="1"/>
-        <Label HorizontalAlignment="Left" Margin="100,134,0,0" VerticalAlignment="Top" Width="61" Height="34" Content="fecha&#xD;&#xA;" Grid.Column="1"/>
+        <Label Content="Nit:" HorizontalAlignment="Left" Margin="100,89,0,0" VerticalAlignment="Top" Width="61" Height="26" Grid.Column="1"/>
+        <Label HorizontalAlignment="Left" Margin="100,124,0,0" VerticalAlignment="Top" Width="61" Height="34" Content="fecha&#xD;&#xA;" Grid.Column="1"/>
         <Label Content="De" HorizontalAlignment="Left" Margin="210,305,0,0" VerticalAlignment="Top" Width="32" Height="26" Grid.Column="1"/>
         <Label Content="A" HorizontalAlignment="Left" Margin="381,305,0,0" VerticalAlignment="Top" Width="22" RenderTransformOrigin="-1.136,0.538" Height="26" Grid.Column="1"/>
         <Label Content="Consulta las ventas en el rango " HorizontalAlignment="Left" Margin="288,280,0,0" VerticalAlignment="Top" Width="205" Height="26" Grid.Column="1"/>
@@ -48,21 +48,24 @@
             </Button.RenderTransform>
         </Button>
         <Button x:Name="BtnEliminar" Content="Eliminar ventas&#xA;" HorizontalAlignment="Left" Margin="542,296,0,0" VerticalAlignment="Top" Width="124" Height="23" Click="Button_Click" Grid.Column="1"/>
-        <Button x:Name="btnActualizar" Content="Actualizar Venta" HorizontalAlignment="Left" Margin="542,335,0,0" VerticalAlignment="Top" Width="124" Height="23" Grid.Column="1" Click="btnActualizar_Click"/>
+        <Button x:Name="btnActualizar" Content="Actualizar Cliente" HorizontalAlignment="Left" Margin="542,335,0,0" VerticalAlignment="Top" Width="124" Height="23" Grid.Column="1" Click="btnActualizar_Click"/>
         <TextBox x:Name="TxtActualizacion" HorizontalAlignment="Left" Height="19" Margin="205,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" Grid.Column="1"/>
         <Label Content="Acutalizar Nombre" HorizontalAlignment="Left" Margin="257,359,0,0" VerticalAlignment="Top" Width="119" Height="26" Grid.Column="1"/>
-        <Button x:Name="btnCargarB" Content="Cargar Base" HorizontalAlignment="Left" Margin="542,381,0,0" VerticalAlignment="Top" Width="124" Height="23" Grid.Column="1" Click="btnCargarB_Click"/>
+        <Button x:Name="btnCargarB" Content="Refrescar Vista" HorizontalAlignment="Left" Margin="542,381,0,0" VerticalAlignment="Top" Width="124" Height="23" Grid.Column="1" Click="btnCargarB_Click"/>
         <TextBox x:Name="Eliminar" HorizontalAlignment="Left" Height="19" Margin="461,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="67" Grid.Column="1"/>
-        <TextBox x:Name="Texbox3" HorizontalAlignment="Left" Height="19" Margin="21,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Texbox3" HorizontalAlignment="Left" Height="19" Margin="21,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
         <Label Content="Correlativo de Venta&#xD;&#xA;" HorizontalAlignment="Left" Margin="65,28,0,0" VerticalAlignment="Top" Width="126" Height="30" Grid.Column="1"/>
         <DatePicker x:Name="Fecha2" HorizontalAlignment="Left" Margin="403,305,0,0" VerticalAlignment="Top" Width="125" Height="24" Grid.Column="1"/>
         <DatePicker x:Name="Fecha1" HorizontalAlignment="Left" Margin="237,306,0,0" VerticalAlignment="Top" Width="139" Height="26" Grid.Column="1"/>
         <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Margin="21,134,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" IsTodayHighlighted="False" Width="161"/>
-        <DataGrid x:Name="dataGrid1" Grid.Column="1" HorizontalAlignment="Left" Height="223" Margin="205,37,0,0" VerticalAlignment="Top" Width="461"/>
+        <DataGrid x:Name="dataGrid1" Grid.Column="1" HorizontalAlignment="Left" Margin="205,37,0,0" VerticalAlignment="Top" Width="450" Height="238" Background="#FF782E2E" Foreground="#FF151313">
+            <DataGrid.Effect>
+                <DropShadowEffect/>
+            </DataGrid.Effect>
+        </DataGrid>
         <Label Content="Corr. Venta" HorizontalAlignment="Left" Margin="461,354,0,0" VerticalAlignment="Top" Width="76" Height="26" Grid.Column="1"/>
-        <Button x:Name="btnDescargar" Content="Descargar Base a *CSV*" HorizontalAlignment="Left" Margin="21,385,0,0" VerticalAlignment="Top" Width="144" Grid.ColumnSpan="2" Click="btnDescargar_Click"/>
+        <Button x:Name="btnDescargar" Content="Descargar Base a *CSV*" HorizontalAlignment="Left" Margin="21,385,0,0" VerticalAlignment="Top" Width="249" Grid.ColumnSpan="2" Click="btnDescargar_Click"/>
         <TextBox x:Name="TtxRuta" HorizontalAlignment="Left" Height="19" Margin="21,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnUbicacion" Content="Guardar en" HorizontalAlignment="Left" Margin="71,384,0,0" VerticalAlignment="Top" Width="90" Click="btnDescargar_Click" Grid.Column="1"/>
 
     </Grid>
 </Window>

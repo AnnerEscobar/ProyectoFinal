@@ -7,7 +7,14 @@ using System.Threading.Tasks;
 namespace FinalProgra.Archivo
 {
     class Descarga
-
     {
+        public void ObeterRuta()
+        {
+
+        }
+        
+
+
+
     }
 }
