@@ -1,0 +1,68 @@
+﻿<Window x:Class="FinalProgra.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProgra"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="0,0,0,-9" RenderTransformOrigin="0.513,0.772" Width="791">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.419"/>
+                <TranslateTransform X="0.999" Y="-0.078"/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="74*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="Texbox1" HorizontalAlignment="Left" Height="19" Margin="21,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Texbox5" HorizontalAlignment="Left" Height="19" Margin="21,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Texbox7" HorizontalAlignment="Left" Height="19" Margin="21,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Texbox8" HorizontalAlignment="Left" Height="19" Margin="21,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
+        <Label Content="Nombre Cliente:" HorizontalAlignment="Left" Margin="100,63,0,0" VerticalAlignment="Top" Width="105" Height="26" Grid.Column="1"/>
+        <TextBox x:Name="Texbox6" HorizontalAlignment="Left" Height="19" Margin="21,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
+        <Label Content="Marca:" HorizontalAlignment="Left" Margin="100,173,0,0" VerticalAlignment="Top" Width="91" Height="26" Grid.Column="1"/>
+        <Label Content="Color:" HorizontalAlignment="Left" Margin="100,287,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="0.484,3.423" Height="26" Grid.Column="1"/>
+        <Label Content="Precio:" HorizontalAlignment="Left" Margin="100,245,0,0" VerticalAlignment="Top" Width="91" Height="26" Grid.Column="1"/>
+        <Label Content="Modelo:" HorizontalAlignment="Left" Margin="100,212,0,0" VerticalAlignment="Top" Width="91" Height="26" Grid.Column="1"/>
+        <Button x:Name="BotonVenta" Content="Realizar Venta" HorizontalAlignment="Left" Margin="21,338,0,0" VerticalAlignment="Top" Width="144" Click="BotonVenta_Click" Height="20" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Texbox2" HorizontalAlignment="Left" Height="19" Margin="21,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
+        <Label Content="Nit:" HorizontalAlignment="Left" Margin="100,94,0,0" VerticalAlignment="Top" Width="91" Height="26" Grid.Column="1"/>
+        <Label HorizontalAlignment="Left" Margin="100,134,0,0" VerticalAlignment="Top" Width="91" Height="34" Content="fecha&#xD;&#xA;" Grid.Column="1"/>
+        <Label Content="De" HorizontalAlignment="Left" Margin="210,305,0,0" VerticalAlignment="Top" Width="32" Height="26" Grid.Column="1"/>
+        <Label Content="A" HorizontalAlignment="Left" Margin="381,305,0,0" VerticalAlignment="Top" Width="22" RenderTransformOrigin="-1.136,0.538" Height="26" Grid.Column="1"/>
+        <Label Content="Consulta las ventas en el rango " HorizontalAlignment="Left" Margin="288,280,0,0" VerticalAlignment="Top" Width="205" Height="26" Grid.Column="1"/>
+        <Button Content="Consultar&#xA;" HorizontalAlignment="Left" Margin="329,336,0,0" VerticalAlignment="Top" Width="124" Height="23" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Click="Button_Click_1">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.084"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="BtnEliminar" Content="Eliminar ventas&#xA;" HorizontalAlignment="Left" Margin="542,296,0,0" VerticalAlignment="Top" Width="124" Height="23" Click="Button_Click" Grid.Column="1"/>
+        <Button x:Name="btnActualizar" Content="Actualizar Venta" HorizontalAlignment="Left" Margin="542,335,0,0" VerticalAlignment="Top" Width="124" Height="23" Grid.Column="1" Click="btnActualizar_Click"/>
+        <TextBox x:Name="TxtActualizacion" HorizontalAlignment="Left" Height="19" Margin="205,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" Grid.Column="1"/>
+        <Label Content="Acutalizar Nombre" HorizontalAlignment="Left" Margin="257,359,0,0" VerticalAlignment="Top" Width="119" Height="26" Grid.Column="1"/>
+        <Button x:Name="btnCargarB" Content="Cargar Base" HorizontalAlignment="Left" Margin="542,381,0,0" VerticalAlignment="Top" Width="124" Height="23" Grid.Column="1" Click="btnCargarB_Click"/>
+        <TextBox x:Name="Eliminar" HorizontalAlignment="Left" Height="19" Margin="461,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="67" Grid.Column="1"/>
+        <TextBox x:Name="Texbox3" HorizontalAlignment="Left" Height="19" Margin="21,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" Grid.ColumnSpan="2"/>
+        <Label Content="Correlativo de Venta&#xD;&#xA;" HorizontalAlignment="Left" Margin="65,28,0,0" VerticalAlignment="Top" Width="126" Height="30" Grid.Column="1"/>
+        <DatePicker x:Name="Fecha2" HorizontalAlignment="Left" Margin="403,305,0,0" VerticalAlignment="Top" Width="125" Height="24" Grid.Column="1"/>
+        <DatePicker x:Name="Fecha1" HorizontalAlignment="Left" Margin="237,306,0,0" VerticalAlignment="Top" Width="139" Height="26" Grid.Column="1"/>
+        <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Margin="21,134,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" IsTodayHighlighted="False" Width="161"/>
+        <DataGrid x:Name="dataGrid1" Grid.Column="1" HorizontalAlignment="Left" Height="223" Margin="205,37,0,0" VerticalAlignment="Top" Width="461"/>
+        <Label Content="Corr. Venta" HorizontalAlignment="Left" Margin="461,354,0,0" VerticalAlignment="Top" Width="76" Height="26" Grid.Column="1"/>
+        <Button x:Name="btnDescargar" Content="Descargar Base a *CSV*" HorizontalAlignment="Left" Margin="21,385,0,0" VerticalAlignment="Top" Width="144" Grid.ColumnSpan="2" Click="btnDescargar_Click"/>
+        <TextBox x:Name="TtxRuta" HorizontalAlignment="Left" Height="19" Margin="21,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnUbicacion" Content="Guardar en" HorizontalAlignment="Left" Margin="71,384,0,0" VerticalAlignment="Top" Width="90" Click="btnDescargar_Click" Grid.Column="1"/>
+
+    </Grid>
+</Window>
